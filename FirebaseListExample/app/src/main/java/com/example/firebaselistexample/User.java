@@ -1,7 +1,7 @@
 package com.example.firebaselistexample;
 
 public class User{
-    private String profile;
+    private String profile; //image url
     private String id;
     private int pw;
     private String userName;
