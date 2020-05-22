@@ -40,7 +40,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                 .into(holder.imageView_profile);
 
         holder.textView_id.setText(arrayList.get(position).getId());
-        holder.textView_pw.setText(arrayList.get(position).getPw());
+        holder.textView_pw.setText(String.valueOf(arrayList.get(position).getPw())); //int값 
         holder.textView_userName.setText(arrayList.get(position).getUserName());
     }
 
