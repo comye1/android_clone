@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
@@ -33,12 +35,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+        Glide.with(holder.itemView)
+                .load(arrayList.get(position).getProfile())
+                .into(holder.imageView_profile);
 
+        holder.textView_id.setText(arrayList.get(position).getId());
+        holder.textView_pw.setText(arrayList.get(position).getPw());
+        holder.textView_userName.setText(arrayList.get(position).getUserName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (arrayList != null ? arrayList.size() : 0);
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
